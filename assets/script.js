@@ -30,19 +30,20 @@ alphabetDos = alpahbet.map(toLower);
 var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", function() {
-    document.getElementById("password")
+    document.getElementById("#password")
 });
 
 
 // Write password to the #password input
 function writePassword() {
     //beginning question for the user to start the process
-    enter = userInt(prompt("How many characters would you like to have in your password? Please choose bettwn 8 and 128"));
+   
+    var generateBtn = window.prompt("How many characters would you like to have in your password? Please choose bettwn 8 and 128");
 
-    if(!enter) {
+    if(!generateBtn) {
         alert("This needs a value.");
-    } else if(enter < 8 || enter > 128) {
-        enter = userInt(prompt("You need to choose characters between 8 and 128"));
+    } else if(generateBtn < 8 || generateBtn > 128) {
+        generateBtn = userInt(prompt("You need to choose characters between 8 and 128"));
     
     } else {
         confirmLowercase = confirm("Will it contain lowercase letters?");
@@ -53,67 +54,76 @@ function writePassword() {
 
     // if else: if the user doest not choose any of the options
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
-        choices = alert("You must choose a criteria!");
+        decisions = alert("You must choose a criteria!");
 
     }
     // Else if statement of the four options below are true
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
 
-        choices = character.concat(number, alpahbet, alphabetDos);
+        decisions = character.concat(number, alpahbet, alphabetDos);
     }
     // else if the statement of the three option below are true
     else if (confirmCharacter && confirmNumber && confirmUppercase) {
-        choices = character.concat(number, alphabetDos);
+        decisions = character.concat(number, alphabetDos);
     }
     else if (confirmCharacter && confirmNumber && confirmLowercase) {
-        choices = character.concat(number, alpahbet);
+        decisions = character.concat(number, alpahbet);
     }
     else if (confirmCharacter && confirmLowercase && confirmUppercase) {
-        choices = character.concat(alpahbet, alphabetDos);
+        decisions = character.concat(alpahbet, alphabetDos);
     }
     else if (confirmNumber && confirmLowercase && confirmUppercase) {
-        choices = number.concat(alpahbet, alphabetDos);
+        decisions = number.concat(alpahbet, alphabetDos);
     }
     // Else if the statments of the two options below are true
     else if (confirmCharacter && confirmNumber) {
-        choices = character.concat(number);
+        decisions = character.concat(number);
 
     } else if (confirmCharacter && confirmLowercase) {
-        choices = character.concat(alpahbet);
+        decisions = character.concat(alpahbet);
 
     } else if (confirmCharacter && confirmUppercase) {
-        choices = character.concat(alphabetDos);
+        decisions = character.concat(alphabetDos);
     }
     else if (confirmLowercase && confirmNumber) {
-        choices = alpha.concat(number);
+        decisions = alpha.concat(number);
 
     } else if (confirmLowercase && confirmUppercase) {
-        choices = alpha.concat(alphabetDos);
+        decisions = alpha.concat(alphabetDos);
 
     } else if (confirmNumber && confirmUppercase) {
-        choices = number.concat(alphabetDos);
+        decisions = number.concat(alphabetDos);
     }
     // Else if the statments of the one option below is true
     else if (confirmCharacter) {
-        choices = character;
+        decisions = character;
     }
     else if (confirmNumber) {
-        choices = number;
+        decisions = number;
     }
     else if (confirmLowercase) {
-        choices = alpha;
+        decisions = alpha;
     }
     // Created space variable to fill uppercase conversion
     else if (confirmUppercase) {
-        choices = space.concat(alpha2);
+        decisions = space.concat(alpha2);
     };
 
     
 
-  var password = generatePassword();
+  var password = [];
+
+  for (var i = 0; i < enter; i++) {
+      var makeDecisions = decisions[Math.floor(Math.random() * decisions.length)];
+      password.push(makeDecisions);
+  }
+
+
   var passwordText = document.querySelector("#password");
+  document.getElementById("#password")
 
   passwordText.value = password;
+  document.textContent("#password")
 
 }
 
