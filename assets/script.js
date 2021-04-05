@@ -104,7 +104,7 @@ function writePassword() {
     else if (confirmLowercase) {
         decisions = alpahbet;
     }
-    // Created space variable to fill uppercase conversion
+
     else if (confirmUppercase) {
         decisions = space.concat(alphabetDos);
     };
