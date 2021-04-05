@@ -60,53 +60,53 @@ function writePassword() {
     // Else if statement of the four options below are true
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
 
-        decisions = character.concat(number, alpahbet, alphabetDos);
+        decisions = specialcharacters.concat(number, alpahbet, alphabetDos);
     }
     // else if the statement of the three option below are true
     else if (confirmCharacter && confirmNumber && confirmUppercase) {
-        decisions = character.concat(number, alphabetDos);
+        decisions = specialcharacters.concat(number, alphabetDos);
     }
     else if (confirmCharacter && confirmNumber && confirmLowercase) {
-        decisions = character.concat(number, alpahbet);
+        decisions = specialcharacters.concat(number, alpahbet);
     }
     else if (confirmCharacter && confirmLowercase && confirmUppercase) {
-        decisions = character.concat(alpahbet, alphabetDos);
+        decisions = specialcharacters.concat(alpahbet, alphabetDos);
     }
     else if (confirmNumber && confirmLowercase && confirmUppercase) {
         decisions = number.concat(alpahbet, alphabetDos);
     }
     // Else if the statments of the two options below are true
     else if (confirmCharacter && confirmNumber) {
-        decisions = character.concat(number);
+        decisions = specialcharacters.concat(number);
 
     } else if (confirmCharacter && confirmLowercase) {
-        decisions = character.concat(alpahbet);
+        decisions = specialcharacters.concat(alpahbet);
 
     } else if (confirmCharacter && confirmUppercase) {
-        decisions = character.concat(alphabetDos);
+        decisions = specialcharacters.concat(alphabetDos);
     }
     else if (confirmLowercase && confirmNumber) {
-        decisions = alpha.concat(number);
+        decisions = alpahbet.concat(number);
 
     } else if (confirmLowercase && confirmUppercase) {
-        decisions = alpha.concat(alphabetDos);
+        decisions = alpahbet.concat(alphabetDos);
 
     } else if (confirmNumber && confirmUppercase) {
         decisions = number.concat(alphabetDos);
     }
     // Else if the statments of the one option below is true
     else if (confirmCharacter) {
-        decisions = character;
+        decisions = specialcharacters;
     }
     else if (confirmNumber) {
         decisions = number;
     }
     else if (confirmLowercase) {
-        decisions = alpha;
+        decisions = alpahbet;
     }
     // Created space variable to fill uppercase conversion
     else if (confirmUppercase) {
-        decisions = space.concat(alpha2);
+        decisions = space.concat(alphabetDos);
     };
 
     
@@ -118,12 +118,12 @@ function writePassword() {
       password.push(makeDecisions);
   }
 
+  var writePassword = password.join("");
 
   var passwordText = document.querySelector("#password");
   document.getElementById("#password")
 
   passwordText.value = password;
-  document.textContent("#password")
 
 }
 
